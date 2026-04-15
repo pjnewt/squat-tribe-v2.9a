@@ -783,6 +783,7 @@ function startMyo() {
   running = true;
 
   let target = myoTarget;
+
   if (unilateralMode && sideStage === "second" && mirroredPlan) {
     const matchedSet = mirroredPlan.myoSets[myoLog.length];
     if (!matchedSet) {
@@ -792,9 +793,19 @@ function startMyo() {
     target = matchedSet.reps;
   }
 
-  el("phase").innerText = unilateralMode ? `MYO (${activeSide.toUpperCase()})` : "MYO";
+  el("phase").innerText = unilateralMode
+    ? `MYO (${activeSide.toUpperCase()})`
+    : "MYO";
   el("target").innerText = String(target);
+
   updateButtons("myo-running");
+
+  tInt = setInterval(() => {
+    timer++;
+    el("time").innerText = String(timer);
+  }, 1000);
+
+  window.addEventListener("devicemotion", detect);
 }
 
 function finishSession() {
