@@ -1,4 +1,4 @@
-const CACHE_NAME = "squat-tribe-v29a-1";
+const CACHE_NAME = "squat-tribe-v29a-2";
 
 const ASSETS = [
   "./",
@@ -6,6 +6,9 @@ const ASSETS = [
   "./styles.css",
   "./app.js",
   "./manifest.json",
+  "./icon-192.png",
+  "./icon-512.png",
+  "./icon-512-maskable.png",
   "./SS Back squat.png",
   "./SS Bulgarian squat.png",
   "./SS Front squat.png",
